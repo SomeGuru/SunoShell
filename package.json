@@ -1,0 +1,32 @@
+{
+  "name": "SunoShell",
+  "version": "1.0.1",
+  "description": "Minimal Chromium-based Suno app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Mike Larios",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.suno.shell",
+    "productName": "SunoShell",
+    "files": [
+      "**/*",
+      "suno.ico"
+    ],
+    "win": {
+      "icon": "suno.png",
+      "target": "nsis"
+    },
+    "nsis": {
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SunoShell"
+    }
+  }
+}
