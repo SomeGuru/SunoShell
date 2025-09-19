@@ -1,0 +1,62 @@
+🧭 SunoShell Setup & Build Guide
+📦 Project Overview
+SunoShell is a minimal Electron app that wraps Suno.com in a desktop shell with download interception, splash screen, and branded UI.
+Created by: Mike Larios
+License: MIT
+
+🛠️ Prerequisites
+- Node.js (v18+ recommended)
+- Git
+- Windows 10/11 (for .exe builds)
+
+📁 Clone & Install
+git clone https://github.com/SomeGuru/SunoShell.git
+cd SunoShell
+npm install
+
+🧠 Project Structure
+SunoShell/
+├── main.js               # Electron main process
+├── package.json          # App metadata & build config
+├── suno.ico              # App icon (used in installer)
+└── build/installer.nsh   # Optional NSIS customization
+
+🚀 Run in Dev Mode
+npm start
+This launches the Electron shell with:
+- Splash screen (5s)
+- Suno login page
+- Download interception with save dialog
+- Custom Help menu with clickable links
+
+🖼️ App Icon
+Ensure suno.ico is present in the root folder.
+You can convert a PNG to ICO using icoconvert.com or tools like sharp.
+Icon has to be 215x215 or larger to build however. So keep that in mind, you can change the requirement for .ico to a .png file if needed. Just make sure it is the 215px by 215px size.
+
+📦 Build Installer (.exe)
+npx electron-builder --win
+This creates:
+- dist/SunoShell Setup.exe → Installer
+- dist/win-unpacked/ → Raw unpacked build
+Installer includes:
+- Desktop shortcut
+- Start Menu shortcut
+- Custom icon
+- Optional NSIS script support
+
+🧾 Legal Notice
+Logos and services are trademarked and owned by Suno and therefore all rights are reserved.
+Mike Larios and Suno are not responsible for misuse or copyright infringement
+based on this SunoShell Electron Application.
+
+
+🔗 Resources
+- 🌐 Suno.com
+- 📁 GitHub Repo
+
+💡 Future Enhancements
+- Auto-updater via GitHub Releases
+- Persistent login/session caching
+- Tray icon with quick actions
+- Custom installer UI with branding
